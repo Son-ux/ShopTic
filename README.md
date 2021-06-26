@@ -1,0 +1,2 @@
+# ShopTic
+My project

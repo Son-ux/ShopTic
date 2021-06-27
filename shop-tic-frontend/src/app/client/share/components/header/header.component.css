@@ -1,0 +1,43 @@
+.header {
+    background-color: white;
+    width: 100%;
+    height: auto;
+}
+
+.header-content{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    padding: 10px 0px 10px;
+}
+
+.header-content-right-area {
+    width: 30%;
+    height: auto;
+    padding: 7px 0px 0px;
+}
+
+.header-content-left-area {
+    width: 70%;
+    height: auto;
+    text-align: right;
+}
+
+.header-content-left-area ul {
+    list-style: none;
+}
+
+.header-content-left-area ul li{
+    float: right;
+    padding: 0 10px;
+}
+
+.header-content-left-area ul li a {
+    text-decoration: none;
+    color: rgb(13, 13, 14);
+}
+
+.header-content-left-area ul li a :hover{
+    color: rgb(0, 0, 0) !important;
+    transition: 0.5s;
+}

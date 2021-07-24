@@ -14,7 +14,7 @@ import com.tic.entity.ProductCategory;
 import com.tic.service.ProductCategoryService;
 
 @RestController
-@RequestMapping("/api/v1/product-category")
+@RequestMapping("/product-category")
 public class ProductCategoryApi {
 	
 	@Autowired

@@ -10,6 +10,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { HomeComponent } from '../modules/home/home.component';
 import { MatButtonModule } from '@angular/material/button';
+import { ProductComponent } from '../modules/product/product.component';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,14 +21,17 @@ import { MatButtonModule } from '@angular/material/button';
     CartsComponent,
     SidebarComponent,
     ClientDefaultComponent,
-    HomeComponent
+    HomeComponent,
+    ProductComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     MatIconModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    IvyCarouselModule,
+    HttpClientModule
   ]
 })
 export class ClientDefaultModule { }

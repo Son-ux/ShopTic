@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- saved from url=(0284)https://hi-static.beecost.com/beecostextension/iframe.html?url=https%3A%2F%2Fshopee.vn%2F%25C3%2581o-Thun-Tay-D%25C3%25A0i-In-H%25C3%25ACnh-Anime-Tokyo-Revenge-Hanagaki-D%25E1%25BB%2585-Th%25C6%25B0%25C6%25A1ng-i.374919397.11503512712&clientId=ext_20366a41-615b-4218-87ba-73739f2e510d -->
+<html lang="en"><link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style lang="en" type="text/css" id="dark-mode-custom-style"></style><style lang="en" type="text/css" id="dark-mode-native-style"></style><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script async="" src="./analytics.js"></script><script>
+        /*
+        * adapted from https://developers.google.com/analytics/devguides/collection/analyticsjs/cross-domain#iframes
+        * I include the GA object reference in my script, so that one version of 
+        * the script works whether served in an iFrame or on a standalone page. 
+        * I usually have to rely on the 3rd-party vendor to implement the code, so 
+        * I like to keep implementation as simple as possible.
+        */
+
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga2');
+
+
+          var currentUrl = document.location.href
+
+          var urlObject = new URL(currentUrl);
+          var clientId = urlObject.searchParams.get("clientId");
+        //   console.log('urlObject:::', urlObject)
+        //   console.log('clientId:::', clientId)
+
+
+
+            var fields = {
+                allowLinker: true,
+                cookieFlags: 'max-age=7200;secure;samesite=none',
+                clientId: clientId
+            };
+
+            ga2('create', 'UA-131344194-7', 'auto', fields);
+            ga2('send', 'pageview');
+
+          // var trackerCreated = false;
+
+          // function createTracker(opt_clientId) {
+          //   if (!trackerCreated) {
+          //     var fields = {
+          //       allowLinker: true,
+          //       cookieFlags: 'max-age=7200;secure;samesite=none'
+          //     };
+          //     if (opt_clientId) {
+          //       fields.clientId = opt_clientId;
+          //     }
+
+          //     fields.allowLinker = true
+
+          //     ga2('create', 'UA-131344194-7', 'auto', fields);
+
+          //     // Google’s sample doesn’t do anything with the tracker
+          //     // once created, but presumably you will want to send either a 
+          //     // GA pageview or event, like I have here.
+          //     ga2('send', 'pageview');
+
+          //     trackerCreated = true;
+          //   }
+          // }
+
+          // window.addEventListener('message', function(event) {
+          //   // if (event.origin != 'https://hi-static.beecost.com') return;
+          //   createTracker(event.data);
+          // });
+
+          // // I increased the timeout to 5 seconds to give the message more
+          // // time to arrive.
+          // setTimeout(createTracker, 5000);
+
+    </script>
+
+    <title>Bee Pixel</title>
+</head>
+<body>
+    
+    <!-- <script>
+        console.log('hello BeeCost');
+    </script> -->
+
+
+</body></html>

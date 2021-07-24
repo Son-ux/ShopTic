@@ -23,23 +23,30 @@ public class ProductImpl implements ProductSevice {
 	private ProductConverter productConverter;
 
 	@Override
-	public List<Product> getAll() {
+	public List<ProductDto> getProductByList() {
 		List<Product> products = productRepository.getAllForClient();
 		List<ProductDto> temp = new ArrayList<ProductDto>();
 		products.stream().forEach(product -> {
 			temp.add(productConverter.toDto(product));
 		});
-		System.out.println(temp);
-		return products;
+		return temp;
 	}
 
 	@Override
-	public Product insertOrUpdateProduct(Product product) {
-		if(null == product.getProductId()) {
-			product.setRated(0);
-			product.setDelFlag(false);
+	public Product insertOrUpdateProduct(ProductDto productDto) {
+		if(null == productDto.getProductId()) {
+			productDto.setRated(0);
+			productDto.setDelFlag(false);
 		}
+		Product product = productConverter.toEntity(productDto);
 		return productRepository.save(product);
+	}
+
+	@Override
+	public ProductDto getProductById(Integer productId) {
+		Product product = productRepository.getOne(productId);
+		ProductDto productdto = productConverter.toDto(product);
+		return productdto;
 	}
 
 }

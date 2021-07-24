@@ -8,7 +8,7 @@ import { ClientDefaultModule } from './client/client-default/client-default.modu
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

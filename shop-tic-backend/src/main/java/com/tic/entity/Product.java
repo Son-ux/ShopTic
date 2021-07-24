@@ -42,7 +42,7 @@ public class Product {
 	private String productImg;
 	
 	@Column(name = "short_decription")
-	private String shortDecription;
+	private String shortDescription;
 	
 	@Column(name = "create_dat")
 	private Date createDate;

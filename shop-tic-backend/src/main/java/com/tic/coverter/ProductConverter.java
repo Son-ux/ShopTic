@@ -19,12 +19,33 @@ public class ProductConverter {
 				.productId(product.getProductId())
 				.productName(product.getProductName())
 				.productImg(product.getProductImg())
-				.shortDescription(product.getShortDecription())
+				.shortDescription(product.getShortDescription())
 				.createDate(product.getCreateDate())
 				.modifyDate(product.getModifyDate())
 				.delFlag(product.getDelFlag())
 				.status(product.getStatus())
 				.rated(product.getRated())
+				.productCategory(category)
+				.build();
+	}
+	
+	public Product toEntity(ProductDto productDto) {
+		ProductCategory category = ProductCategory.builder()
+				.categoryId(productDto.getProductCategory().getCategoryId())
+				.categoryCode(productDto.getProductCategory().getCategoryCode())
+				.categoryName(productDto.getProductCategory().getCategoryName())
+				.listProducts(null)
+				.build();
+		return Product.builder()
+				.productId(productDto.getProductId())
+				.productName(productDto.getProductName())
+				.productImg(productDto.getProductImg())
+				.shortDescription(productDto.getShortDescription())
+				.createDate(productDto.getCreateDate())
+				.modifyDate(productDto.getModifyDate())
+				.delFlag(productDto.getDelFlag())
+				.status(productDto.getStatus())
+				.rated(productDto.getRated())
 				.productCategory(category)
 				.build();
 	}

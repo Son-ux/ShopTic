@@ -19,7 +19,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "review_dat")
 @Builder
-public class ReviewDat {
+public class Review {
 	@Id
 	@Column(name = "review_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,6 +39,10 @@ public class ReviewDat {
 	
 	@Column(name = "modify_date")
 	private String modifyDate;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "product_id")
+	private Product product;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id")

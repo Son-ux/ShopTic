@@ -8,18 +8,36 @@
     <div class="product-top">
         <div class="product-left">
             <div class="product-image">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfrLAZZRhW85ny1UWBbuyo4_ATKJgx7dHK6Q&usqp=CAU" alt="">
+                <img src={{product.productImg}} alt="">
             </div>
             <div class="product-image-slide">
-                <carousel>
-                    <div class="carousel-cell">
-                        [images]="images">
-                    </div>
-                </carousel>
             </div>
         </div>
-        <div class="product-right">
-
+        <div class="product-middle">
+            <div>
+                <label><h1>{{product.productName}}</h1></label>
+            </div>
+            <div>
+                <label>
+                    <h2>
+                        <span *ngIf="product.rated != 0 && null != product.rated; else noRating">
+                            {{product.rated}}
+                        </span>
+                        <ng-template #noRating><span>Chưa có đánh giá nào</span></ng-template>
+                        <span> / </span>
+                        <span>reviews: </span>{{product.totalReview}}
+                    </h2>
+                </label>
+                <label>
+                    <h1>{{product.productPrice | currency: "VND"}} 
+                        <span *ngIf="product.status == false; else soldOut">Status: Còn hàng</span>
+                        <ng-template #soldOut><span>Hết hàng</span></ng-template>
+                    </h1>
+                </label>
+            </div>
+            <div>
+                
+            </div>
         </div>
     </div>
     <div class="product-bottom">

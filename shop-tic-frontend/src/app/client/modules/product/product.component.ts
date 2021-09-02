@@ -1,5 +1,7 @@
+import { Product } from './../../../models/Product';
 import { ProductService } from '../../../service/product/product.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -8,18 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
+  id: number;
+  product: Product;
 
-  constructor(private product: ProductService) {
-    this.product.getProductById(1).subscribe(data=>{
-      console.warn(data);
-    });
+  constructor(private route: ActivatedRoute, private productService: ProductService, private router: Router) {
   }
 
   ngOnInit(): void {
-  }
+    this.product = new Product();
 
-  images = [
-    {path: 'PAhttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfrLAZZRhW85ny1UWBbuyo4_ATKJgx7dHK6Q&usqp=CAUTH_TO_IMAGE'}
-  ]
+    this.id = this.route.snapshot.params['id'];
+
+    this.productService.getProductById(1)
+    .subscribe(data => {
+      console.log(data);
+      this.product = data;
+    })
+  }
 
 }

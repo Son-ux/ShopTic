@@ -44,6 +44,8 @@ public class Product {
 	@Column(name = "short_decription")
 	private String shortDescription;
 	
+	@Column(name = "product_price")
+	private Double productPrice;
 	@Column(name = "create_dat")
 	private Date createDate;
 	
@@ -74,4 +76,8 @@ public class Product {
 	@Builder.Default
 	@OneToMany(mappedBy = "product")
 	private Set<InvoiceDetail> billDetails = new HashSet<>();
+	
+	@Builder.Default
+	@OneToMany(mappedBy = "product")
+	private Set<Review> reviewDat = new HashSet<>();
 }

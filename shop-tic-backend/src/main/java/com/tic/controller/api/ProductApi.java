@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,8 +33,8 @@ public class ProductApi {
 		return null;
 	}
 	
-	@GetMapping(value = "/getById")
-	public ResponseEntity<ProductDto> getProductById(@RequestParam(value = "productId") Integer productId) {
+	@GetMapping(value = "/getById/{productId}")
+	public ResponseEntity<ProductDto> getProductById(@PathVariable(value = "productId") Integer productId) {
 		return ResponseEntity.ok(productService.getProductById(productId));
 	}
 }

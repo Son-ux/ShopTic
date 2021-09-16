@@ -1,10 +1,13 @@
 package com.tic.coverter;
 
+import java.util.Set;
+
 import org.springframework.stereotype.Component;
 
 import com.tic.dto.ProductDto;
 import com.tic.entity.Product;
 import com.tic.entity.ProductCategory;
+import com.tic.entity.ProductColor;
 
 @Component
 public class ProductConverter {

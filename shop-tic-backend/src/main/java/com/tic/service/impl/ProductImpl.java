@@ -1,17 +1,19 @@
 package com.tic.service.impl;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tic.Repository.ProductCategoryRepository;
 import com.tic.Repository.ProductRepository;
 import com.tic.Repository.ReviewRepository;
 import com.tic.coverter.ProductConverter;
 import com.tic.dto.ProductDto;
 import com.tic.entity.Product;
+import com.tic.entity.ProductColor;
 import com.tic.service.ProductSevice;
 
 @Service
@@ -22,9 +24,6 @@ public class ProductImpl implements ProductSevice {
 	
 	@Autowired
 	private ReviewRepository reviewRepository;
-	
-	@Autowired
-	private ProductCategoryRepository categoryRepository;
 	
 	@Autowired
 	private ProductConverter productConverter;
@@ -57,6 +56,8 @@ public class ProductImpl implements ProductSevice {
 			productDto = productConverter.toDto(product);
 		}
 		productDto.setTotalReview(reviewRepository.countByProductId(productId));
+		Set<ProductColor> productColors = productRepository.getProductColors(productId);
+		productDto.setProductColors(productColors);
 		return productDto;
 	}
 

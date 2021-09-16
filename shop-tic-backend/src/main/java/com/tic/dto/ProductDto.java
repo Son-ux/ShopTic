@@ -1,8 +1,10 @@
 package com.tic.dto;
 
 import java.util.Date;
+import java.util.Set;
 
 import com.tic.entity.ProductCategory;
+import com.tic.entity.ProductColor;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,5 +29,6 @@ public class ProductDto {
 	private Boolean status;
 	private Integer rated;
 	private Integer totalReview;
+	private Set<ProductColor> ProductColors;
 	private ProductCategory productCategory;
 }

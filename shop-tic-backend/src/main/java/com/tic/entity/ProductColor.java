@@ -35,6 +35,8 @@ public class ProductColor {
 	
 	@Builder.Default
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinTable(name = "product_color", joinColumns = @JoinColumn(name = "color_id"), inverseJoinColumns = @JoinColumn(name = "product_id"))
+	@JoinTable(name = "product_color",
+				joinColumns = @JoinColumn(name = "color_id"), 
+				inverseJoinColumns = @JoinColumn(name = "product_id"))
 	private Set<Product> listProducts = new HashSet<>();
 }

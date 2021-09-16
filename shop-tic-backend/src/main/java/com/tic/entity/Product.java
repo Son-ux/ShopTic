@@ -7,6 +7,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -46,6 +47,7 @@ public class Product {
 	
 	@Column(name = "product_price")
 	private Double productPrice;
+	
 	@Column(name = "create_dat")
 	private Date createDate;
 	
@@ -60,6 +62,9 @@ public class Product {
 	
 	@Column(name = "del_flag")
 	private Boolean delFlag;
+	
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "listProducts")
+	private Set<ProductColor> listColor = new HashSet<>();
 	
 	@ManyToOne
 	@JoinColumn(name = "category_id")

@@ -14,10 +14,10 @@
             </div>
         </div>
         <div class="product-middle">
-            <div>
+            <div class="product-middle-title">
                 <label><h1>{{product.productName}}</h1></label>
             </div>
-            <div>
+            <div class="product-middle-title">
                 <label>
                     <h2>
                         <span *ngIf="product.rated != 0 && null != product.rated; else noRating">
@@ -35,8 +35,8 @@
                     </h1>
                 </label>
             </div>
-            <div>
-                
+            <div class="product-middle-title">
+                <h1>Color</h1>
             </div>
         </div>
     </div>
